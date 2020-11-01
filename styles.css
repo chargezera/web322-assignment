@@ -1,0 +1,567 @@
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Montserrat', sans-serif;
+}
+
+
+/*NAVIGATION_BAR*/
+.tnav {
+	
+    background-color: rgb(88, 88, 88);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 105px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: 1px 2px rgba(133, 84, 51, 0.856);
+ }
+ 
+ .tnav::after{
+        content: "";
+		background: url(vancouver.jpg);
+        opacity: 0.35;
+        top: 0;
+        left: 0;
+        bottom: 0;
+		right: 0;
+        position: absolute;
+        z-index: -1;   
+ }
+
+ .mainlogo{
+     width: 260px;
+     height: 120px;
+ }
+ 
+ .tnav a {
+   color: rgba(212, 212, 212, 0.774);
+   opacity: 0.9;
+   padding: 5px 20px;
+   font-size: 25px;
+ }
+ 
+ 
+ .tnav a.icon {
+   display: none;
+ }
+ 
+ .tnav a:hover {
+   cursor: pointer;
+   color: #ff6701;
+   opacity: 90%;
+   border-bottom: 6px solid #c45003;
+   transition-delay:0.05s;
+ }
+ 
+ .active {
+	background-color: rgba(51, 51, 51, 0.568);
+   border-left: #ff6701 3px solid;
+   border-bottom: #ff6701 3px solid;
+   border-radius: 20px 20px 20px 10px;
+ }
+ 
+ /*INTRODUCTION_BOOKING_FORM*/
+
+.intro{
+    border-bottom: rgba(133, 84, 51, 0.856) 5px solid;
+    border-radius: 0px 0px 0px 0px;
+	align-items: center;
+	display: flex;
+    justify-content: space-around;
+	margin-top: 30px;
+	position: relative;
+	height: 450px;
+	text-align: right;
+	background: url('miami.jpg') no-repeat center center/cover;
+}
+
+.intro *{
+	position: relative;
+	z-index: 1;
+}
+
+.intro1{
+    border-bottom: rgba(133, 84, 51, 0.856) 5px solid;
+    border-radius: 0px 0px 0px 0px;
+	align-items: center;
+	display: flex;
+    justify-content: space-around;
+	margin-top: 30px;
+	position: relative;
+	height: 450px;
+	text-align: right;
+	background: url('vanc.jpg') no-repeat center center/cover;
+}
+
+.intro1 *{
+	position: relative;
+	z-index: 1;
+}
+
+.introtext{
+	font-size: 52px;
+	text-transform: uppercase;
+	font-weight: 700;
+  background: -webkit-linear-gradient(#eee, #333);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.intro::before{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(10, 10, 10, 0.7); 	
+}
+
+.intro1::before{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(10, 10, 10, 0.7); 	
+} 
+
+.intro_ph{
+	padding-top: 50px;
+	padding-bottom: 20px;
+	display: block;
+	width: 400px;
+	margin: auto;
+}
+
+.ad{
+	text-transform:uppercase;
+	font-weight: 600;
+	padding-top: -50px;
+	padding-left: 30px;
+	display: flex;
+	background: -webkit-linear-gradient(rgb(204, 184, 0), rgb(255, 199, 96));
+	background-clip: border-box;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	
+}
+
+.sect {
+	position: relative;
+	height: 100vh;
+}
+
+.sect .sect-center {
+	position: absolute;
+	top: 60%;
+	left: 0;
+	right: 0;
+	-webkit-transform: translateY(60%);
+	transform: translateY(-60%);
+}
+
+#book {
+	background-image: url('vancouver.jpg');
+	background-size: cover;
+	background-position: center;
+	border-bottom: rgba(133, 84, 51, 0.856) 5px solid;
+}
+
+#book::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	background: rgba(24, 24, 24, 0.432);
+}
+
+.book_form {
+	background: url("out.png");
+	padding: 50px 20px;
+	-webkit-box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.3);
+	border-radius: 25px 90px;
+}
+
+.book_form .form_group {
+	position: relative;
+	margin-bottom: 30px;
+}
+
+.book_form .form_control {
+	background-color: #fdfdfd;
+	border-radius: 4px 20px;
+	border: line;
+	border-color: #D5A345;
+	height: 40px;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	color: #313949;
+	font-size: 14px;
+}
+
+.book_form .form_control::-webkit-input-placeholder {
+	color: rgba(45, 81, 151, 0.3);
+}
+
+.book_form .form_control:-ms-input-placeholder {
+	color: rgba(45, 81, 151, 0.3);
+}
+
+.book_form .form_control::placeholder {
+	color: rgba(45, 81, 151, 0.3);
+}
+
+.book_form input[type="date"].form_control:invalid {
+	color: rgba(45, 81, 151, 0.3);
+}
+
+.book_form select.form_control {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.book_form select.form_control+.slct_arrow {
+	position: absolute;
+	right: 0px;
+	bottom: 4px;
+	width: 32px;
+	line-height: 32px;
+	height: 32px;
+	text-align: center;
+	pointer-events: none;
+	color: rgba(50, 68, 104, 0.3);
+	font-size: 25px;
+}
+
+.book_form select.form_control+.slct_arrow:after {
+	content: '\279C';
+	display: block;
+	-webkit-transform: rotate(180deg);
+	transform: rotate(95deg);
+}
+
+.book_form .form_label {
+	display: inline-block;
+	color: #1a2438;
+	font-weight: 700;
+	margin-bottom: 6px;
+	margin-left: 7px;
+}
+
+.book_form .s_btn {
+	display: inline-block;
+	color: #fff;
+	background-color: #7f90af;
+	font-weight: 700;
+	padding: 14px 30px;
+	border-radius: 4px 20px;
+	border: none;
+}
+
+.book_form .s_btn:hover,
+.book_form .s_btn:focus {
+	opacity: 0.9;
+}
+
+.book_ct {
+	margin-top: 80px;
+	margin-bottom: 30px;
+}
+
+.book_ct h1 {
+	font-size: 52px;
+	text-transform: uppercase;
+	color: #fff;
+	font-weight: 700;
+	background: -webkit-linear-gradient(#eee, rgb(122, 122, 122));
+	background-clip: border-box;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.book_ct p {
+	font-size: 16px;
+	color: rgba(255, 255, 255, 0.8);
+}
+
+
+/*MAIN*/
+.textt{
+	display: inline-flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	padding: 10px;
+}
+
+.textt > div{
+	margin: -5px;
+}
+
+.texty{
+	align-items: center;
+	display: inline-flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.price{
+	font-size: 16px;
+	background: -webkit-linear-gradient(rgb(190, 250, 112), rgb(55, 109, 44));
+	background-clip: border-box;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	padding-bottom: 20px;
+}
+.main{
+	padding: 50px;
+	background-color: rgb(41, 42, 43);
+}
+
+.main_text{
+	text-align: center;
+	color: #F6DDCC;
+	padding-bottom: 20px;
+}
+
+.container{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.itemwrap{
+	font-size: 12px;
+	color: #F6DDCC;
+	padding-bottom: 20px;
+	text-align: left;
+	display: flex;
+	flex-direction: column;
+	animation: races_ani 1s forwards ease-out;
+	transform: translateX(-120px);
+}
+
+
+.item{
+	width: 300px;
+	height: 200px;
+	border-radius: 5px;
+	box-shadow: 10px 5px 60px 2px rgba(0,0,0,0.9);
+}
+
+/*FOOTER_SOCIAL_MEDIA*/
+.foot{
+	display: flex;
+	flex-direction: row;
+	background-color: #3c5975;
+	text-align: left;
+	align-items: center;
+	justify-content: space-around;
+	color: rgb(165, 165, 165);
+	height: 100px;
+}
+
+.foot a{
+	color: rgb(231, 231, 231);
+	margin: 13px;
+}
+
+.foot p{
+	font-size: 13px;
+	padding-bottom: 0px;
+}
+.fa {
+	padding: 10px;
+	font-size: 30px;
+	width: 90px;
+	text-align: center;
+	text-decoration: none;
+	margin: 5px 2px;
+  }
+  
+  .fa:hover {
+	  opacity: 0.7;
+  }
+
+.fa-youtube {
+	background: #f00000;
+	color: white;
+  }
+
+  .fa-instagram {
+	background: #12598b;
+	color: white;
+  }
+
+  .fa-twitter {
+	background: #50a9ee;
+	color: white;
+  }
+
+  .promo{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	height: 450px;
+	background-image: url('ottawa.jpg');
+	background-size: cover;
+	background-position: center;
+	border-bottom: rgba(133, 84, 51, 0.856) 5px solid;
+  }
+
+  
+.promo_ph{
+	padding-top: 50px;
+	padding-bottom: 20px;
+	display: inline-block;
+	width: 700px;
+	margin: auto;
+}
+
+.promop{
+	background: -webkit-linear-gradient(rgb(255, 255, 255), rgb(167, 136, 0));
+	background-clip: border-box;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	text-align:center;
+}
+
+.info_s{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	height: 660px;
+	background-image: url('montreal.jpg');
+	background-size: cover;
+	background-position: center;
+	border-bottom: rgba(133, 84, 51, 0.856) 5px solid;
+  }
+
+.info_ct{
+	margin-top: 80px;
+	margin-bottom: 30px;
+}
+
+.info_ct h1{
+	font-size: 52px;
+	text-transform: uppercase;
+	color: #fff;
+	font-weight: 700;
+	background: -webkit-linear-gradient(#eee, rgb(194, 194, 194));
+	background-clip: border-box;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.vid{
+	border-style: outset;
+}
+
+
+
+/*MEDIA_QUERIES*/
+@media screen and (max-width: 800px){
+	.intro_ph{
+		padding-top: 100px;
+		width: 200px;
+	}
+
+	.intro_text{
+		font-size: 30px;
+	}
+
+	.item{
+		width: 300px;
+		height: 169px;
+	}
+	
+	.main_logo{
+		margin: 0;
+	}
+
+	.intro1{
+		height: 250px;
+	}
+}
+@media screen and (max-width: 660px){
+	.intro_ph{
+		padding-top: 0px;
+		width: 200px;
+	}
+
+	.introtext{
+		font-size: 25px;
+	}
+
+	.mainlogo{
+		margin: 0;
+	}
+
+	.tnav #Links a{
+  		font-size:10px;
+	}
+}
+
+@media screen and (max-width: 500px){
+	.intro_ph{
+		padding-top: 100px;
+		width: 250px;
+	}
+
+	.introtext{
+		font-size: 20px;
+	}
+
+	.mainlogo{
+		margin: 0;
+	}
+
+	.tnav #Links a{
+  		font-size:10px;
+	}
+}
+
+@media screen and (max-width: 361px){
+	.intro_ph{
+		padding-top: 100px;
+		width: 300px;
+	}
+
+	.introtext{
+		font-size: 20px;
+	}
+
+	.mainlogo{
+		margin: 0;
+	}
+
+	.tnav #Links a{
+  		font-size:10px;
+	}
+
+	.intro{
+		height: 450px;
+	}
+
+	.intro1{
+		height: 450px;
+	}
+}
+
+

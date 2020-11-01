@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Registration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+    <div id="container1">
+      <div class="wrap_form">
+        <h2>Sign Up</h2>
+        <p>to manage your bookings</p>
+        <p>Already signed up? <a href="#">Login Here</a></p>
+        <form>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" />
+          </div>
+          <div class="form-group">
+            <label for="firstname">First Name</label>
+            <input type="text" name="firstName" id="firstName" />
+          </div>
+          <div class="form-group">
+            <label for="lastname">Last Name</label>
+            <input type="text" name="lastName" id="lastName" />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" />
+          </div>
+          <div class="form-group">
+            <label for="birthday">Birthday</label>
+            <label id="eighteen"> To sign up, you must be at least 18. Other people <br>who use BaP won't see your birthday.</label>
+            <input type="date" name="date" id="date">
+          </div>
+          <button type="submit" class="btn">Sign Up</button>
+          <p class="bottom_text">
+              We'll send you marketing promotions, special offers, inspiration, and policy updates via email.
+          </p>
+        </form>
+      </div>
+      <footer>
+      </footer>
+    </div>
+  </body>
+</html>
+
+<style>
+  * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+  }
+
+  #eighteen{
+    font-size: 12px;
+  }
+
+  a {
+   text-decoration: none;
+  }
+
+  body {
+    background: #a36328e1;
+  }
+
+
+
+  #container1 {
+    max-width: 640px;
+    margin: auto;
+    padding-top: 70px; 
+  }
+
+  #container1 a{
+    color: #c18349;
+  }
+
+  .wrap_form {
+    background: url('../images/out.png');
+    border-radius: 5px;
+  }
+
+  .wrap_form h2,
+  .wrap_form p {
+    text-align: center;
+    font-family: Roboto;
+  }
+
+  .wrap_form h1{
+    padding-top: 20px;
+  }
+
+  .wrap_form p{
+    padding-top:15px;
+  }
+
+  .wrap_form .form-group {
+    font-family: Roboto;
+    padding-left: 160px;
+  }
+
+  .wrap_form .form-group label {
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 5px;
+  }
+
+  .wrap_form .form-group input {
+    width: 300px;
+    padding: 12px;
+    border: rgb(179, 179, 179) 1px solid;
+    border-radius: 10px;
+  }
+
+  .wrap_form button {
+    display: inline-block;
+    background-color: #c18d49;
+    font-size: 16px;
+    border-radius: 3px 3px 20px 20px;
+    color: whitesmoke;
+    border: white 1px solid;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-left:157px;
+    height: 40px;
+    width: 300px;
+  }
+
+  .wrap_form button:hover {
+    background-color: #a05837;
+  }
+
+  .wrap_form .bottom_text {
+    font-size: 11px;
+    font-family: Roboto;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  .wrap_form .bottom_text a{
+    color: #a86814;
+  }
+
+
+</style>
