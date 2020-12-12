@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="icon" href="favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" , initial-scale=1.0>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <div id=bacc>
+        <script src="sc.js"></script>
+        <!-- navigation bar -->
+        <div class="tnav">
+            <img class="mainlogo" src="logo.png" alt="logo">
+            <div id="Links">
+                <a href="/">Home 🏠</a>
+                <a href="roomlisting">Room Listing</a>
+                {{#if logged}}
+                <a href="dashboard" class="active">Dashboard</a>
+                {{else}}
+                <a href="login">Login</a>
+                <a href="registration">Sign up</a>
+                {{/if}}
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            </a>
+        </div>
+        <div class="intro">
+            <div>
+                <img class="intro_ph" src="images/apartment.jpg">
+                <p class="ad"> Apartment in Toronto for $49/night</p>
+            </div>
+            <h1 class="introtext">Looking for a place to stay?<br>Find out our best variants<br> across Canada.</h1>
+        </div>
+        <div id=bacc>
+            {{#if logged}}
+            <h1> WELCOME </h1>
+            <h1 style=color:aquamarine> {{firstN}} {{lastN}}</h1>
+            <button type="submit" class="zalog" onclick="href='logout'"><a href="logout">LOGOUT</a></button>
+            <div id=eto>
+                {{#if isAdmin}}
+                {{#if added}}
+                <h1 style=color:greenyellow>Listing succesfully added!</h1>
+                {{/if}}
+                <div class="wrap_form">
+                    <form action="/addlist" method="POST" enctype="multipart/form-data">
+                        <div class="wrap_form">
+                            <br>
+                            <h2 style=color:yellow> ADD LISTING</h2>
+                            <div class="group_form">
+                                <label for="rTitle">Listing Title: </label>
+                                <input placeholer="Shiny house with pool" type="text" name="rTitle" id="rTitle"
+                                    required />
+                            </div>
+                            <div class="group_form">
+                                <label for="rDescription">Description: </label>
+                                <input placeholder="Champ Residence with..." type="text" name="rDescription"
+                                    id="rDescription" required />
+                            </div>
+                            <div class="group_form">
+                                <label for="rPrice">Price (CAD): </label>
+                                <input placeholder="Ex.: 49" type="number" name="rPrice" id="rPrice" min="1" required />
+                            </div>
+                            <div class="group_form">
+                                <label class="">City</label>
+                                <select class="form_control" name="city">
+                                    <option id="city">Toronto</option>
+                                    <option id="city">Montreal</option>
+                                    <option id="city">Vancouver</option>
+                                    <option id="city">Ottawa</option>
+                                </select>
+                                <span class="select-arrow"></span>
+                            </div>
+                            <div class="group_form">
+                                <label for="myFile">Select photo: </label>
+                                <input type="file" name="listPhoto" required />
+                            </div>
+                            <button type="submit" class="btn">Create Listing</button>
+                            <br>
+                        </div>
+                    </form>
+                </div>
+                {{/if}}
+            </div>
+            {{else}}
+            <h1> Please login to use dashboard </h1>
+            <button type="submit" class="zalog" onclick="href='./login'"><a href="./login">LOGIN</a></button>
+            {{/if}}
+        </div>
+        <footer class="foot">
+            <div>
+                <a href="https://www.twitter.com/" class="fa fa-twitter"></a>
+                <a href="https://www.youtube.com/" class="fa fa-youtube"></a>
+                <a href="https://www.instagram.com/" class="fa fa-instagram"></a>
+            </div>
+            <p> Zhanibek Sagyndyk - 2020<br>
+                &copy; Book-a-Place</p>
+        </footer>
+    </div>
+</body>
+
+</html>
+
+<style>
+    h1 {
+        text-align: center;
+        color: aliceblue;
+    }
+
+    #eto {
+        color: rgb(244, 255, 183);
+        align-items: center;
+    }
+
+    #bacc {
+        text-align: center;
+    }
+
+    .zalog {
+        background: url(out.png);
+        font-size: 30px;
+        border-radius: 15px;
+    }
+
+    body {
+        background: #383838;
+    }
+
+
+    .wrap_form h2,
+    .wrap_form p {
+        text-align: center;
+    }
+
+    .wrap_form h1 {
+        padding-top: 0px;
+    }
+
+    .wrap_form p {
+        padding-top: 0px;
+    }
+
+    .wrap_form .group_form {
+        padding-left: 0px;
+        padding-top: 10px;
+    }
+
+    .wrap_form .group_form label {
+        display: inline;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .wrap_form .group_form input {
+        width: 300px;
+        padding: 12px;
+        border: rgb(179, 179, 179) 1px solid;
+        border-radius: 10px;
+    }
+
+    .wrap_form button {
+        /* 
+        Button should wrap accross 100% and display as block
+        Background color for button is #49c1a2
+      */
+        display: inline-block;
+        background-color: #d48216;
+        font-size: 16px;
+        border-radius: 3px 3px 20px 20px;
+        color: whitesmoke;
+        border: white 1px solid;
+        cursor: pointer;
+        margin-top: 10px;
+        margin-left: 0px;
+        margin-bottom: 20px;
+        height: 40px;
+        width: 300px;
+    }
+
+    .wrap_form button:hover {
+        /* 
+        Hover background color for button is #37a08e
+      */
+        background-color: #a05837;
+    }
+
+    .wrap_form .bottom_text {
+        /* 
+        Bottom text is smaller
+      */
+        font-size: 11px;
+        font-family: Roboto;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .wrap_form .bottom_text a {
+        color: #a86814;
+    }
+</style>
